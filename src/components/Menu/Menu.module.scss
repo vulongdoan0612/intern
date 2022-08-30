@@ -1,0 +1,55 @@
+.icones{
+    position: fixed;
+    left:0;
+    top:20%;
+    width:45px;
+    padding:4px 0;
+    background-color: rgba(100, 100, 100, 0.3);
+    z-index: 200;
+    display:flex;
+    flex-direction: column;
+    transform-origin: left center;
+    transition: all 0.3s linear;
+    overflow: hidden;
+    &:hover{
+        overflow: visible;
+        width:200px;
+        background-color: rgba(100, 100, 100, 0.5);
+    }
+}
+.menu{
+    
+    display:flex;
+    align-items: center;
+    width:max-content;
+    margin-left: 2px;
+    padding:4px 6px;
+    cursor: pointer;
+    .icon{
+        font-size: 30px;
+        margin-right:15px;
+        width:30px;
+        cursor: pointer;
+        user-select: none;
+        transform: scale(1);
+        transition: all 0.1s ease;
+        &:hover{
+            transform: scale(1.3);
+        }
+        &:hover ~ span{
+            transform: scale(1.1);
+            color:#fff;
+        }
+    }
+    p{
+        user-select: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 400;
+        color:#fff;
+
+    }
+}
+.icones{
+    margin-left:10px;
+}
