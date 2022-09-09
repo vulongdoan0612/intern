@@ -1,6 +1,8 @@
 .movie-container{
-    background-color: #333;
-    color:#fff;
+    background-color: #272727;
+// 272727
+    color: #fff;
+
     padding-top:20px;
     padding-right:20px;
     padding-left:20px;
@@ -21,7 +23,7 @@
 }
 
 .heading{
-    color:white;
+    color:#fff;
     font-size: 18px;
     user-select: none;
     transition: all 0.3s ease;
@@ -93,6 +95,7 @@
     display:flex;
 }
 .flex{
+    padding-top:5px;
 display:flex;
 }
 .movie-img{
@@ -113,7 +116,7 @@ display:flex;
     object-fit: cover;
 }
 .movie-name{
-
+    border-radius: 5px;
     padding:4px;
     text-align: center;
     font-size: 14px;
@@ -146,7 +149,7 @@ display:flex;
     
 }
 .span{
-    background-image: linear-gradient( to right,#333 ,#fff );;
+    background: #ff652f;
     width:10px;
     height:60px;
     border-radius: 15px;

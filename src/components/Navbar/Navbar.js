@@ -10,6 +10,7 @@ import Menu from "../Menu/Menu";
 import DarkModeToggle from "react-dark-mode-toggle";
 import Provider, { useDarkmodeContext } from 'react-use-dark-mode';
 import DarkMode from "../DarkMode/DarkMode";
+import moment from "moment";
 
 
 
@@ -56,7 +57,7 @@ function Navbar() {
             style={
               scrollY < 50
                 ? { backgroundColor: "transparent" }
-                : { backgroundColor: "black" }
+                : { backgroundColor: "#19181A" }
             }
             className={cx("wrapper")}
           >
@@ -91,11 +92,14 @@ function Navbar() {
               style={scrollY > 50 ? { display: "block" } : { display: "none" }}
             ></div>
             <DarkModeToggle
-             
               onChange={setIsDarkMode}
               checked={isDarkMode}
               size={80}
             />
+            <button className={cx("date")}>
+              <h1 className={cx("time1")}> {moment().format("h:mm:ss")}</h1>
+              <h1 className={cx("time")}>{moment().format("a")}</h1>
+            </button>
           </div>
         </div>
       </div>

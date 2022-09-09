@@ -83,3 +83,26 @@ display:none;
     padding-left:35px;
     padding-right:0px;
 }
+.date{
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-left:20px;
+    text-align: center;
+    
+}
+.time1{
+    display:block;
+    @media screen and (max-width:768px) and (min-width:425px) {
+        display:none;
+    }
+}
+.time{
+    
+    display:none;
+    @media screen and (max-width:768px) and (min-width:425px) {
+        display:block;
+        
+    }
+}

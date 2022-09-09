@@ -10,7 +10,7 @@
     transform-origin: left center;
     transition: all 0.3s linear;
     overflow: hidden;
-    
+    color:#14A76C;
     @media screen and (min-width:768px) and (max-width:1024px) {
         color:black;
         z-index: 2323232323232323232;
@@ -19,7 +19,7 @@
         flex-direction: column;
         top:20%;
         left:0;
-        background: rgba(204, 204, 204, 0.5);
+        background: #74747463;
         
         
     }
@@ -45,6 +45,7 @@
 }
 
 .menu{
+    color:#14A76C;
         border-bottom:1px solid transparent;
     flex-direction: row;
     display:flex;

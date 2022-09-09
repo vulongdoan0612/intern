@@ -10,6 +10,14 @@ import Menu from "../Menu/Menu";
 import classNames from "classnames/bind";
 import styles from './Home.module.scss'
 import './Home.css'
+import { Notyf } from "notyf";
+ var notyf = new Notyf({
+   position: {
+     x: "right",
+     y: "top",
+   },
+ });
+ notyf.success("Xin chào ! Chúc bạn xem phim vui vẻ ^^.");
 const cx =classNames.bind(styles)
 function Home(props) {
   const { MovieDetail } = useSelector((state) => state.infoMovies);

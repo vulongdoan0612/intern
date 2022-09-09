@@ -17,18 +17,23 @@ import Comedy from './components/ListMovie/Comedy';
 import Horror from './components/ListMovie/Horror';
 import Romance from './components/ListMovie/Romance';
 import Documentaries from './components/ListMovie/Documentaries';
+import { Notyf } from 'notyf';
 
 
 
 //hiệu ứng animation
 
 function App(props) {
+
+
+
   const { MovieDetail } = useSelector((state) => state.infoMovies);
   //khai báo redux, được lấy từ reducerRedux
   return (
     //Khai báo BrowserRouter, Routes, Route như sau để chuyển đổi link
     <div className="App">
       <BrowserRouter>
+        
         <Navbar></Navbar>
         <Routes>
           {/* trang home không cần phải thêm path */}
