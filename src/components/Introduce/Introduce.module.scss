@@ -1,6 +1,12 @@
 .part1{
     width:100%;
     height:875px;
+    @media screen and (min-width:768px) and (max-width:1024px) {
+        height:100%;
+    }
+     @media screen and (max-width:767px) and (min-width:425px) {
+    height:100%;
+    }
 }
 .introImg{
     position: absolute;
@@ -10,6 +16,9 @@
            background-color: rgba(0,0,0,0.1);
 
     }
+}
+.movieImg3a{
+    padding-top:88px;
 }
 .img{
         background: rgba(0,0,0,.4);
@@ -28,30 +37,58 @@
     text-align: center;
     margin-left:500px;
     margin-right:500px;
+    @media screen and (max-width:1024px) and (min-width:768px) {
+       margin-left: 0;
+    margin-right: 0;
+    padding-top:0;
+    }
+     @media screen and (max-width:767px) and (min-width:425px) {
+    margin:0;
+    padding:0;
+    }
 }
 
 .introTitle{
+        margin: auto;
     h1{
+         @media screen and (max-width:767px) and (min-width:425px) {
+    margin:0;
+    padding:0;
+    font-size: 25px;
+    }
         padding-bottom:20px;
         font-size: 50px;
     }
-    h3{
+    h3{ 
+        @media screen and (max-width:767px) and (min-width:425px) {
+    margin:0;
+    padding:0;
+    font-size: 20px;
+    }
         font-size: 26px;
         padding-bottom:20px;
     }
     h4{
+         @media screen and (max-width:767px) and (min-width:425px) {
+    margin:0;
+    padding:0;
+    }
         padding-bottom:20px;
+        @media screen and (max-width:1024px) and (min-width:768px) {
+padding:0;    }
+    }
+    @media screen and (max-width:1024px) and (min-width:768px) {
+        width:500px;
     }
 }
+
 .email{
      outline: none;
     border:none;
     width:500px;
     height:60px;
     padding-left:20px;
-    &:focus{
-
-    }
+ 
 }
 .batdau{
     width:150px;
@@ -76,6 +113,20 @@
     position: relative;
     top: -66%;
     width: 100%;
+    @media screen and (max-width:1024px) and (min-width:768px) {
+    position: absolute;
+     max-height: 54%;
+    max-width: 73%;
+    top: 21%;
+        right:14%;
+
+    }
+     @media screen and (max-width:767px) and (min-width:425px) {
+    position: absolute;
+    right:13%;
+    top:21%;
+
+    }
 }
 .part2{
     
@@ -86,7 +137,18 @@
 }
 
 .introduce2{
-
+     @media screen and (max-width:767px) and (min-width:425px) {
+    margin:0;
+    padding:0;
+    align-items: center;
+    }
+@media screen and (max-width:1024px) and (min-width:768px) {
+      padding-top:0;
+      padding-left:150px;
+      align-items: center;
+       padding-left:100px;
+    padding-right:50px;
+    }
      height:500px;
     width:100%;
     padding-top:50px;
@@ -95,6 +157,14 @@
     padding-right:230px;
 }
 .contentIntro2{
+    @media screen and (max-width:1024px) and (min-width:768px) {
+          padding-top:0px;
+
+    }
+     @media screen and (max-width:767px) and (min-width:425px) {
+    margin:0;
+    padding:0;
+    }
     padding-top:100px;
     h1{
         font-size: 50px;
@@ -104,6 +174,9 @@
     }
 }
 .introduce3{
+     @media screen and (max-width:767px) and (min-width:425px) {
+    align-items: center;
+    }
     border-top:2px solid white;
         padding-top:50px;
 
@@ -113,10 +186,28 @@
     width:100%;
     background-color: black;
     display:flex;
+     @media screen and (max-width:1024px) and (min-width:768px) {
+          padding-top:0px;
+          padding-left:50px;
+    padding-right:100px;
+        align-items: center;
+    }
+    @media screen and (max-width:767px) and (min-width:425px) {
+    padding:0;
+    }
 }
 .contentIntro3{
+     @media screen and (max-width:1024px) and (min-width:768px) {
+          padding-top:0px;
+
+    }
     padding-top:100px;
     h1{
+        @media screen and (max-width:767px) and (min-width:425px) {
+       margin:0;
+       padding:0;
+       font-size: 25px;
+       }
         font-size: 50px;
 
     }
@@ -125,6 +216,9 @@
     }
 }
 .downIntro3{
+     @media screen and (max-width:767px) and (min-width:425px) {
+   left:0;
+    }
     background-color: black;
     height:100px;
     left:100px;
@@ -156,8 +250,17 @@ img{
     width:100%;
     height:100%;
 }
-.movieIntro5{}
 .introduce4{
+     @media screen and (max-width:1024px) and (min-width:768px) {
+         padding-left:100px;
+         padding-right:100px;
+
+    }
+     @media screen and (max-width:767px) and (min-width:425px) {
+padding:0;
+    }
+    padding-left:20px;
+    padding-right:20px;
     border-top:2px solid white;
     display:flex;
     flex-direction: column;
@@ -165,8 +268,8 @@ img{
     color:white;
     height:300px;
     padding-top:50px;
-    padding-left:240px;
-    padding-right:800px;
+    // padding-left:240px;
+    // padding-right:800px;
 }
 .titleIntro4{
     font-size: 50px;
@@ -175,6 +278,21 @@ img{
     font-size: 25px;
 }
 .introduce5{
+    
+     @media screen and (max-width:1024px) and (min-width:768px) {
+        padding:0;
+
+    }
+    @media screen and (min-width:375px) {
+        padding:0;
+
+    }
+    @media screen and (max-width:767px) and (min-width:425px) {
+       
+        padding-right:50px;
+        padding-top:30px;
+
+    }
     transition: all 0.3 ;
     width:100%;
         height:500px;
@@ -186,11 +304,29 @@ img{
         padding-top:100px;
 }
 .contentIntro5{
+    @media screen and (max-width:767px) and (min-width:425px) {
+padding:0;
+    }
     padding-top:50px;
+    padding-left:20px;
+    padding-right:20px;
     color:white;
+     @media screen and (max-width:1024px) and (min-width:768px) {
+          width:100%;
+
+    }
 }
 .movieImg5{
+    @media screen and (max-width:767px) and (min-width:425px) {
+width:200px;
+    }
     width:500px;
     height:300px;
+}
+.movieImg2{
+       @media screen and (max-width:1024px) and (min-width:768px) {
+          
+
+    }
 }
 

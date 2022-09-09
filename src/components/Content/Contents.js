@@ -15,8 +15,8 @@ const cx = classNames.bind(styles)
 function Contents(props) {
   const [scrollY]=useScrollY()
   const dispatch = useDispatch();
+  
   const { NetflixOriginals,
-
   TrendingMovies,
   TopRatedMovies,
   ActionMovies,
@@ -24,7 +24,8 @@ function Contents(props) {
   HorrorMovies,
   RomancesMovies,
   DocumentariesMovies,
-   } = useSelector(state => state.infoMovies)
+  } = useSelector(state => state.infoMovies)
+  
   useEffect(() => {
     dispatch(getNetflixOriginals());
     dispatch(getTrendingMovies());

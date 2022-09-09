@@ -113,6 +113,8 @@ export const getDocumentariesMovies = () => async (dispatch) => {
 export const setMovieDetail = (movie) => dispatch => {
   dispatch({type: Types.SET_MOVIE_DETAIL, payload: movie})
 }
+
+
 export const getSearchMovies = (keywords) => async (dispatch) => {
   try {
     const result = await axios.get(

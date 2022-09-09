@@ -1,14 +1,18 @@
 import Contents from "../Content/Contents";
 import Intro from "../Intro/Intro";
-import Menu from "../Menu/Menu";
 import MoviesDetail from "../MoviesDetail/MoviesDetail";
 import {useSelector} from 'react-redux'
 import { useEffect, useState } from "react";
-import Introduce from "../Introduce/Introduce";
 import IntroduceAll from "../Introduce/IntroduceAll";
-
+import Ads from "../Ads/Ads";
+import Menu2 from "../Menu/Menu2";
+import Menu from "../Menu/Menu";
+import classNames from "classnames/bind";
+import styles from './Home.module.scss'
+import './Home.css'
+const cx =classNames.bind(styles)
 function Home(props) {
-    const { MovieDetail } = useSelector((state) => state.infoMovies);
+  const { MovieDetail } = useSelector((state) => state.infoMovies);
     const [isShowMovieDetail, setIsShowMovieDetail] = useState(false)
     useEffect(() => {
         setIsShowMovieDetail(MovieDetail ? true : false)
@@ -16,8 +20,10 @@ function Home(props) {
     return (
       <div>
         <Intro></Intro>
+        {/* <Ads></Ads> */}
+        <Menu2 className="a" ></Menu2>
+
         <Contents></Contents>
-        <Menu></Menu>
         <MoviesDetail
           //khai báo redux, được lấy từ reducerRedux
           movie={MovieDetail}

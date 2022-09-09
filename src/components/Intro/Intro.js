@@ -23,6 +23,7 @@ function Intro() {
   return (
     <div className={cx("wrapper")}>
       <ReactPlayer
+        
         controls={false}
         autoPlay={true}
         playing={true}

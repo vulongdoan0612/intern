@@ -1,6 +1,5 @@
 import classNames from "classnames/bind";
 import styles from './Introduce.module.scss'
-import ReactPlayer from "react-player";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";

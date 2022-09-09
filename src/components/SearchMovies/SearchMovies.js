@@ -56,7 +56,7 @@ const useQuery = () => new URLSearchParams(useLocation().search);
                   onClick={() => dispatch(setMovieDetail(movie))}
                 >
                   <img src={imgageURL} alt="{movie.title || movie.name}"></img>
-                  <span>{movie.title || movie.name}</span>
+                  <span className={cx("span")}>{movie.title || movie.name}</span>
                 </div>
               );
             }

@@ -6,11 +6,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useScrollY from "../Hooks/useScrollY";
 import { useState } from "react";
 import {useNavigate} from "react-router-dom"
-import Theme from "../Theme/Theme";
+import Menu from "../Menu/Menu";
+import DarkModeToggle from "react-dark-mode-toggle";
+import Provider, { useDarkmodeContext } from 'react-use-dark-mode';
+import DarkMode from "../DarkMode/DarkMode";
+
+
 
 const cx=classNames.bind(styles)
 
+
 function Navbar() {
+  
+ 
+ 
+
+    const [isDarkMode, setIsDarkMode] = useState(() => false);
+
   // Khởi tạo Function hiển ẩn navbar khi scroll
   const [scrollY] = useScrollY()
   //khởi tạo usestate để thêm action cho thẻ input ( chuyển link)
@@ -35,39 +47,56 @@ function Navbar() {
           setKeywords("");
 
   }
+
     return (
-      <div className={cx("all")}>
-        <div
-          // Tạo navbar hiển thị khi scroll
-          style={
-            scrollY < 50
-              ? { backgroundColor: "transparent" }
-              : { backgroundColor: "black" }
-          }
-          className={cx("wrapper")}
-        >
-          <div className={cx("logo")} onClick={handleHome}>
-            <Logo></Logo>
-          </div>
+      <div>
+        <div className={cx("all")}>
           <div
-            className={cx("search-input")}
-            selector="false"
-            spellCheck="false"
+            // Tạo navbar hiển thị khi scroll
+            style={
+              scrollY < 50
+                ? { backgroundColor: "transparent" }
+                : { backgroundColor: "black" }
+            }
+            className={cx("wrapper")}
           >
-            <FontAwesomeIcon
-              icon={faMagnifyingGlass}
-              className={cx("icon")}
-            ></FontAwesomeIcon>
-            <input
-              placeholder="Tìm kiếm"
-              type="text"
-              className={cx("input")}
-              //khởi tạo onchange để lắng nghe sự thay đổi
-              onChange={handleChangeInput}
-              value={keywords}
-            ></input>
+            <div className={cx("logo")} onClick={handleHome}>
+              <Logo></Logo>
+            </div>
+
+            <div
+              className={cx("search-input")}
+              selector="false"
+              spellCheck="false"
+            >
+              <FontAwesomeIcon
+                icon={faMagnifyingGlass}
+                className={cx("icon")}
+              ></FontAwesomeIcon>
+              <div className={cx("input_menu")}>
+                <input
+                  placeholder="Tìm kiếm"
+                  type="text"
+                  className={cx("input")}
+                  //khởi tạo onchange để lắng nghe sự thay đổi
+                  onChange={handleChangeInput}
+                  value={keywords}
+                ></input>
+              </div>
+              <div className={cx("menu")}>
+                <Menu></Menu>
+              </div>
+            </div>
+            <div
+              style={scrollY > 50 ? { display: "block" } : { display: "none" }}
+            ></div>
+            <DarkModeToggle
+             
+              onChange={setIsDarkMode}
+              checked={isDarkMode}
+              size={80}
+            />
           </div>
-          <Theme></Theme>
         </div>
       </div>
     );

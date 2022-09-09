@@ -10,24 +10,30 @@ import { SmoothHorizontalScrolling } from "../../Utils/Index";
 import { useViewport } from "../Hooks/useViewport";
 import { useDispatch } from "react-redux";
 import { setMovieDetail } from "../Store/Action";
+  
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Menu from "../Menu/Menu";
 
 const cx = classNames.bind(styles);
 
 function Content(props) {
-    useEffect(() => {
-      AOS.init({
-        duration: 500,
-        offset:55500,
-      });
-    }, []);
+  
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      offset:55500,
+    });
+  }, []);
   const dispatch = useDispatch();
   const handleSetMovie = (movie) => {
     dispatch(setMovieDetail(movie));
-  }//Khai báo dispatch, setmoviedetail khi nhấp vào là movie được truyền dữ liệu từ redux
+  }
+  //Khai báo dispatch, setmoviedetail khi nhấp vào là movie được truyền dữ liệu từ redux
   const [windowWidth] = useViewport();
-  const { movies, title, isNetflix, idSection } = props;
+  const { movies, title, idSection } = props;
+  
   //Function để tạo Movies Slider
   const sliderRef = useRef();
   const movieRef = useRef();
@@ -81,12 +87,46 @@ function Content(props) {
   const onDragEnter = (e) => {
     setDragMove(e.screenX);
   };
+
+  // const { pathname } = useLocation();
+  // const active = movies.findIndex((movie) => movie.key === pathname);
+  // const handleRouter = () => {
+  //   if (movies.key === active) {
+  //     navigate(`/${title}`);
+  //   }
+  // }
   //--------------------------------------------------------------------------------
   return (
     <div className={cx("movie-container")} id={idSection}>
-      <h1 data-aos="fade-up" data-aos-anchor-placement="center-bottom"
-        className={cx("heading")}>{title}
-      </h1>
+      <div className={cx("flex")}>
+        <span className={cx("span")}></span>
+        <Link to={`/movie/${title}/`} className={cx("headingg")}>
+          <h1
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            className={cx("heading")}
+          >
+            {title}
+          </h1>
+        </Link>
+        <div className={cx("flexbtn")}>
+          <div className={cx("left")}>
+            <FontAwesomeIcon
+              // Gọi hàm slide btn left
+              onClick={handleScrollLeft}
+              icon={faCircleLeft}
+            ></FontAwesomeIcon>
+          </div>
+          <div className={cx("right")}>
+            <FontAwesomeIcon
+              // Gọi hàm slide btn right
+              onClick={handleScrollRight}
+              icon={faCircleRight}
+            ></FontAwesomeIcon>
+            {/* ----------------------------------------------------------------------------------------- */}
+          </div>
+        </div>
+      </div>
 
       <div
         className={cx("movie-slider")}
@@ -108,7 +148,7 @@ function Content(props) {
                           ? "300px"
                           : windowWidth > 768
                           ? "250px"
-                          : "200px"
+                          : "150px"
                       }
                       )`,
               }
@@ -119,30 +159,37 @@ function Content(props) {
           movies.length > 0 &&
           movies.map((movie, index) => {
             if (movie.poster_path && movie.backdrop_path !== null) {
-              let imageURL = isNetflix
-                ? `https://image.tmdb.org/t/p/original/${movie.poster_path}`
-                : `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
+              let imageURL = `https://image.tmdb.org/t/p/original/${movie.poster_path}`;
+
               return (
+                //Link tới movie Click B1
                 <div
                   key={index}
                   className={cx("movie-item")}
                   ref={movieRef}
                   //Thêm draggable để kéo/ thả
                   draggable="false"
-                  onClick={() => handleSetMovie(movie)}
                 >
                   {
                     // Thêm ref = movieRef //}
                     /* Thêm draggable để kéo slide */
                   }
+
                   <img
                     className={cx("movie-img")}
                     draggable="false"
                     src={imageURL}
                     alt=""
+                    onClick={() => handleSetMovie(movie)}
                   />
-                  <div className={cx("movie-name")}>
-                    {movie.title || movie.name}
+
+                  <div className={cx("flex")}>
+                    <div
+                      onClick={() => handleSetMovie(movie)}
+                      className={cx("movie-name")}
+                    >
+                      {movie.title || movie.name}
+                    </div>
                   </div>
                 </div>
               );
@@ -151,21 +198,6 @@ function Content(props) {
       </div>
 
       {/*-------------------------------------------------------------------------------- */}
-      <div className={cx("left")}>
-        <FontAwesomeIcon
-          // Gọi hàm slide btn left
-          onClick={handleScrollLeft}
-          icon={faCircleLeft}
-        ></FontAwesomeIcon>
-      </div>
-      <div className={cx("right")}>
-        <FontAwesomeIcon
-          // Gọi hàm slide btn right
-          onClick={handleScrollRight}
-          icon={faCircleRight}
-        ></FontAwesomeIcon>
-        {/* ----------------------------------------------------------------------------------------- */}
-      </div>
     </div>
   );
 }

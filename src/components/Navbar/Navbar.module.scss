@@ -9,16 +9,19 @@
     display:flex;
     flex-direction: row;
     align-items: center;
-    padding:10px;
+    padding-top:10px;
+    padding-bottom:10px;
     background-color: black;
     @media screen and (max-width:425px){
         flex-direction: column;
     }
+    @media screen and (max-width:1024px) and (min-width:768px){
+    }
   
 }
 .search-input{
+    display:flex;
     user-select: none;
-    padding-left:20px;
     
 }
 .icon{
@@ -32,20 +35,51 @@
     position: absolute;
     
 }
+.input_menu{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    justify-content: space-between;
+    @media screen and (min-width:768px) {
+
+    }
+}
+.menu{
+     @media screen and (min-width:768px) and (max-width:1024px) {
+display:none;
+    }
+    @media screen and (max-width:767px) and (min-width:425px) {
+display:none;
+    }
+}
 .input{
     cursor: pointer;
-    width:0%;
     color:white;
     background-color: transparent;
     transition: all 0.3s ease-in;   
     user-select: none;
     position: relative;
+    
     &:focus{
         border-radius: 8px;
-        width:100%;
         background-color: transparent;
         opacity: 1;
+        .icon{
+            display:none;
+        }
     }
+     @media screen and (min-width:768px) and (max-width:1024px) {
+            width:500px;
+        padding-left:0px;
+       margin-left:26px;
+    padding-right:0px;
+    opacity: 1;
+    
+    }
+
     opacity: 0;
-    padding:5px 40px;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:35px;
+    padding-right:0px;
 }

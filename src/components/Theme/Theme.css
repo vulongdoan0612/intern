@@ -13,9 +13,10 @@
        
 }
 .theme{
+    padding-left:20px;
     width:100%;
-    padding-left:1000px;
     vertical-align: middle;
+    transition: all 0.3s ;
 }
 .spinner{
     width:24px;
@@ -31,5 +32,5 @@
     transform: translateX(30px);
 }
 .toggle.active{
-
+    
 }

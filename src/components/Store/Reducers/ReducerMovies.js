@@ -10,7 +10,8 @@ const reducerMoviesInitialState = {
   RomancesMovies: null,
   DocumentariesMovies: null,
   MovieDetail: null,
-  SearchMovies:null,
+  SearchMovies: null,
+
 };
 // //cấu trúc function redux là const = ()=>{
 // // switch ({
@@ -43,6 +44,7 @@ const reducerMovies = (state = reducerMoviesInitialState, action) => {
         return { ...state, MovieDetail: payload };
       case Types.GET_SEARCH_MOVIES:
         return { ...state, SearchMovies: payload };
+
       default:
         return state;
     }

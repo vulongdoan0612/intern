@@ -25,7 +25,7 @@ function Introduce2(props) {
             phát Blu-ray và nhiều thiết bị khác.
           </h2>
         </div>
-        <div data-aos="fade-left" className={cx("movieIntro2")}>
+        <div className={cx("movieIntro2")}>
           <div className={cx("movieImg2")}>
             <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"></img>
           </div>
@@ -45,7 +45,7 @@ function Introduce2(props) {
         </div>
       </div>
       <div className={cx("introduce3")}>
-        <div data-aos="fade-right" className={cx("movieIntro3")}>
+        <div  className={cx("movieIntro3")}>
           <div className={cx("movieImg3")}>
             <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"></img>
           </div>
@@ -83,7 +83,7 @@ function Introduce2(props) {
       </div>
       <div className={cx("introduce3")}>
         <div data-aos="fade-left" className={cx("movieIntro5")}>
-          <div className={cx("movieImg3")}>
+          <div className={cx("movieImg3a")}>
             <img src="https://occ-0-58-395.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABbtRHxTEgmwtFXR4vBnwSO9UzWSascscH0PRpGcXYVkyVez31FciwrQ4bmD41KIrsypJG4Bf54yOJL82SDLL54SGCIdZov0ySklR.png?r=df6"></img>
           </div>
         </div>
@@ -113,8 +113,7 @@ function Introduce2(props) {
             </h2>
           </div>
           <div
-            data-aos="fade-left"
-            data-aos-anchor-placement="top-bottom"
+          
             className={cx("movieIntro5")}
           >
             <div className={cx("movieImg5")}>

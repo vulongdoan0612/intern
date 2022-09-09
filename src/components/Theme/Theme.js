@@ -1,10 +1,9 @@
-import classNames from "classnames/bind";
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import './Theme.css'
-function Theme(props) {
+function Theme() {
     const [on, setOn] = useState(false)    
     const handleToggle = () => {
-      setOn(on => !on)
+      setOn(on => !on);
 
     }
     return (
