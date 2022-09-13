@@ -8,6 +8,7 @@ import classNames from 'classnames/bind';
 import styles from './Icon.module.scss'
 import { animateScroll as scroll } from 'react-scroll';
 import useScrollY from '../Hooks/useScrollY'
+import AddFavourite from '../AddFar/AddFavourite';
 const ScrollToTop = () => {
   scroll.scrollToTop();
 }

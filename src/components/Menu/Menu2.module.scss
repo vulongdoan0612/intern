@@ -1,4 +1,15 @@
+
+.wrap2{
+        background: #74747463;
+         transition-timing-function: ease-in;
+    transition: all 0.5;
+
+}
 .icones{
+    @media screen and (max-width:768px){
+        font-size: smaller;
+    }
+        transition-timing-function: ease-in;
     // position: fixed;
     // left:0;
     // top:20%;
@@ -8,34 +19,41 @@
     display:flex;
     flex-direction: row;
     transform-origin: left center;
-    transition: all 0.3s linear;
+    transition: all 0.5;
     overflow: hidden;
     color:#14A76C;
-    @media screen and (min-width:768px) and (max-width:1024px) {
-        color:black;
-        z-index: 2323232323232323232;
+    // @media screen and (min-width:768px) and (max-width:1024px) {
+    //     color:black;
+    //     z-index: 2323232323232323232;
+    //     position: fixed;
+    //     display:flex;
+    //     flex-direction: column;
+    //     top:20%;
+    //     left:0;
+    //     background: #74747463;
+        
+        
+    // }
+    // @media screen and (max-width:767px) and (min-width:425px) {
+    // color:black;
+    //     z-index: 2323232323232323232;
+    //     position: fixed;
+    //     display:flex;
+    //     flex-direction: column;
+    //     top:20%;
+    //     left:0;
+    //     background: rgba(204, 204, 204, 0.5);
+    // }
+    // @media screen and (min-width:1025px) {
+    //     display:none;
+    // }
+            color:black;
+        z-index: 1;
         position: fixed;
         display:flex;
         flex-direction: column;
         top:20%;
         left:0;
-        background: #74747463;
-        
-        
-    }
-    @media screen and (max-width:767px) and (min-width:425px) {
-    color:black;
-        z-index: 2323232323232323232;
-        position: fixed;
-        display:flex;
-        flex-direction: column;
-        top:20%;
-        left:0;
-        background: rgba(204, 204, 204, 0.5);
-    }
-    @media screen and (min-width:1025px) {
-        display:none;
-    }
 
 }
 
@@ -85,5 +103,10 @@
     }
 }
 .icones{
-    margin-left:10px;
+    transition: all 0.5 linear;
+    transition: all 0.5 ease;
+        border-radius:20px ;
+    margin-left:40px;
+        transform: translateY(50%);
+
 }

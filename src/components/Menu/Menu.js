@@ -1,36 +1,39 @@
 import classNames from "classnames/bind";
 import styles from "./Menu.module.scss";
-import { useLocation } from "react-router-dom";
-import { Link } from "react-scroll";
+import { useLocation,Link } from "react-router-dom";
 import "./Menu.css";
+import { useDispatch } from "react-redux";
 
 const cx = classNames.bind(styles);
 const Menu = (props) => {
   const { pathname } = useLocation();
-  
   const headerNav = [
     {
       to: "netflix",
-      name: "Home",
+      name: "Netflix Originals",
+      title: "Netflix Originals",
     },
     {
       to: "trending",
       name: "Trending",
+      title: "Trending",
     },
     {
       to: "toprated",
       name: "Top rated",
+      title: "Top Rated Movies",
     },
     {
       to: "action",
       name: "Action",
+      title: "Action Movies",
     },
-    { to: "comedy", name: "Comedy Movies" },
-    { to: "horror", name: "Horror Movies" },
-    { to: "romances", name: "Romance Movies" },
-    { to: "documentaries", name: "Document Movies" },
+    { to: "comedy", name: "Comedy Movies", title: "Comedy Movies" },
+    { to: "horror", name: "Horror Movies", title: "Horror Movies" },
+    { to: "romances", name: "Romance Movies", title: "Romance Movies" },
+    { to: "documentaries", name: "Document Movies", title: "Documentaries" },
   ];
-  const active = headerNav.findIndex((e) => e.to === pathname);
+
   return (
     <div className={cx("icones")}>
       {/* <MenuItem name="Home"  to="netflix"></MenuItem>
@@ -45,19 +48,16 @@ const Menu = (props) => {
         
         to="documentaries"
       ></MenuItem> */}
-
+      {/* <Link to={`/movie/${title}/`} className={cx("headingg")}></Link> */}
       {headerNav.map((e, i) => (
         <Link
           className={cx("menu")}
-          to={e.to}
-          spy={true}
-          smooth={true}
-          offset={-70}
+          to={`/movie/${e.title}/` }
           key={i}
         >
           <div className={cx("flex")}>
             <p className={`title`}>{e.name}</p>
-            <span className={`span ${i === active ? "active" : ""}`}></span>
+            <span className={`span`}></span>
           </div>
         </Link>
       ))}

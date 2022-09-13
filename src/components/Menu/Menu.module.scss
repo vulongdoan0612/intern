@@ -52,9 +52,13 @@
     cursor: pointer;
     transition:all 0.2s ease-in-out;
      
+    &:focus{
+            border-bottom:2px solid white;
+            transform: translateY(-15%)
+    }
     &:hover{
+                        transform: translateY(-15%)
 
-            transform: scale(1.1);
         
     }
     .icon{

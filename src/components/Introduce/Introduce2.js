@@ -18,7 +18,7 @@ function Introduce2(props) {
   return (
     <div className={cx("part2")}>
       <div className={cx("introduce2")}>
-        <div data-aos="fade-right" className={cx("contentIntro2")}>
+        <div  className={cx("contentIntro2")}>
           <h1>Thưởng thức trên TV của bạn.</h1>
           <h2>
             Xem trên TV thông minh, Playstation, Xbox, Chromecast, Apple TV, đầu
@@ -45,7 +45,7 @@ function Introduce2(props) {
         </div>
       </div>
       <div className={cx("introduce3")}>
-        <div  className={cx("movieIntro3")}>
+        <div className={cx("movieIntro3")}>
           <div className={cx("movieImg3")}>
             <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"></img>
           </div>
@@ -62,7 +62,7 @@ function Introduce2(props) {
             </div>
           </div>
         </div>
-        <div data-aos="fade-left" className={cx("contentIntro3")}>
+        <div  className={cx("contentIntro3")}>
           <h1>Tải xuống nội dung để xem ngoại tuyến.</h1>
           <h2>
             Lưu lại những nội dung yêu thích một cách dễ dàng và luôn có thứ để
@@ -71,10 +71,10 @@ function Introduce2(props) {
         </div>
       </div>
       <div className={cx("introduce4")}>
-        <div data-aos="zoom-in-up" className={cx("titleIntro4")}>
+        <div  className={cx("titleIntro4")}>
           <h1 className={cx("titleIntro4")}>Xem ở mọi nơi.</h1>
         </div>
-        <div data-aos="zoom-in-up" className={cx("contentIntro4")}>
+        <div  className={cx("contentIntro4")}>
           <h3 className={cx("contentIntro4")}>
             Phát trực tuyến không giới hạn phim và chương trình truyền hình trên
             điện thoại, máy tính bảng, máy tính xách tay và TV.
@@ -82,12 +82,12 @@ function Introduce2(props) {
         </div>
       </div>
       <div className={cx("introduce3")}>
-        <div data-aos="fade-left" className={cx("movieIntro5")}>
+        <div  className={cx("movieIntro5")}>
           <div className={cx("movieImg3a")}>
             <img src="https://occ-0-58-395.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABbtRHxTEgmwtFXR4vBnwSO9UzWSascscH0PRpGcXYVkyVez31FciwrQ4bmD41KIrsypJG4Bf54yOJL82SDLL54SGCIdZov0ySklR.png?r=df6"></img>
           </div>
         </div>
-        <div data-aos="fade-right" className={cx("contentIntro3")}>
+        <div  className={cx("contentIntro3")}>
           <h1>Tạo hồ sơ cho trẻ em.</h1>
           <h2>
             Đưa các em vào những cuộc phiêu lưu với nhân vật được yêu thích
@@ -99,8 +99,8 @@ function Introduce2(props) {
       <div className={cx("introducecolor")}>
         <div className={cx("introduce5")}>
           <div
-            data-aos="fade-right"
-            data-aos-anchor-placement="top-bottom"
+            
+         
             className={cx("contentIntro5")}
           >
             <h1>
@@ -112,10 +112,7 @@ function Introduce2(props) {
               không cần cung cấp thông tin thanh toán!
             </h2>
           </div>
-          <div
-          
-            className={cx("movieIntro5")}
-          >
+          <div className={cx("movieIntro5")}>
             <div className={cx("movieImg5")}>
               <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ab36101/nmhp/vn.jpg"></img>
             </div>

@@ -18,7 +18,8 @@ import Horror from './components/ListMovie/Horror';
 import Romance from './components/ListMovie/Romance';
 import Documentaries from './components/ListMovie/Documentaries';
 import { Notyf } from 'notyf';
-
+import LeftBtn from './components/LeftBtn/LeftBtn';
+import{ GlobalProvider} from "../src/components/context/GlobalState"
 
 
 //hiệu ứng animation
@@ -32,52 +33,55 @@ function App(props) {
   return (
     //Khai báo BrowserRouter, Routes, Route như sau để chuyển đổi link
     <div className="App">
-      <BrowserRouter>
-        
-        <Navbar></Navbar>
-        <Routes>
-          {/* trang home không cần phải thêm path */}
-          <Route exact path="/" element={<Home></Home>}></Route>
-          <Route
-            path="/movieAll/:movieType"
-            element={<ContentList></ContentList>}
-          ></Route>
-          {/* Link tới Movie Click B2 */}
-          <Route
-            path="/movie/Netflix%20Originals/"
-            element={<List></List>}
-          ></Route>
-          <Route
-            path="/movie/Trending/"
-            element={<TrendingList></TrendingList>}
-          ></Route>
-          <Route
-            path="/movie/Top%20Rated%20Movies/"
-            element={<Toprated></Toprated>}
-          ></Route>
-          <Route
-            path="/movie/Action%20Movies/"
-            element={<ActionPage></ActionPage>}
-          ></Route>
-          <Route
-            path="/movie/Comedy%20Movies/"
-            element={<Comedy></Comedy>}
-          ></Route>
-          <Route
-            path="/movie/Horror%20Movies/"
-            element={<Horror></Horror>}
-          ></Route>
-          <Route
-            path="/movie/Romance%20Movies/"
-            element={<Romance></Romance>}
-          ></Route>
-          <Route
-            path="/movie/Documentaries/"
-            element={<Documentaries></Documentaries>}
-          ></Route>
-          <Route path="/search" element={<Search></Search>}></Route>
-        </Routes>
-      </BrowserRouter>
+      <GlobalProvider>
+        <BrowserRouter>
+          
+          <Navbar></Navbar>
+          <LeftBtn></LeftBtn>
+          <Routes>
+            {/* trang home không cần phải thêm path */}
+            <Route exact path="/" element={<Home></Home>}></Route>
+            <Route
+              path="/movieAll/:movieType"
+              element={<ContentList></ContentList>}
+            ></Route>
+            {/* Link tới Movie Click B2 */}
+            <Route
+              path="/movie/Netflix%20Originals/"
+              element={<List></List>}
+            ></Route>
+            <Route
+              path="/movie/Trending/"
+              element={<TrendingList></TrendingList>}
+            ></Route>
+            <Route
+              path="/movie/Top%20Rated%20Movies/"
+              element={<Toprated></Toprated>}
+            ></Route>
+            <Route
+              path="/movie/Action%20Movies/"
+              element={<ActionPage></ActionPage>}
+            ></Route>
+            <Route
+              path="/movie/Comedy%20Movies/"
+              element={<Comedy></Comedy>}
+            ></Route>
+            <Route
+              path="/movie/Horror%20Movies/"
+              element={<Horror></Horror>}
+            ></Route>
+            <Route
+              path="/movie/Romance%20Movies/"
+              element={<Romance></Romance>}
+            ></Route>
+            <Route
+              path="/movie/Documentaries/"
+              element={<Documentaries></Documentaries>}
+            ></Route>
+            <Route path="/search" element={<Search></Search>}></Route>
+          </Routes>
+        </BrowserRouter>
+      </GlobalProvider>
       {/* <Home></Home> */}
       {/* <SearchMovies></SearchMovies> */}
       {/* <Intro></Intro>

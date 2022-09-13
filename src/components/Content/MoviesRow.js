@@ -15,11 +15,15 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Menu from "../Menu/Menu";
+import { GlobalContext } from "../context/GlobalState";
+import { useContext } from "react";
 
 const cx = classNames.bind(styles);
 
 function Content(props) {
-  
+  const {
+    addMovieToWatchList
+  }=useContext(GlobalContext)
   useEffect(() => {
     AOS.init({
       duration: 500,
@@ -95,6 +99,7 @@ function Content(props) {
   //     navigate(`/${title}`);
   //   }
   // }
+
   //--------------------------------------------------------------------------------
   return (
     <div className={cx("movie-container")} id={idSection}>
@@ -190,6 +195,7 @@ function Content(props) {
                     >
                       {movie.title || movie.name}
                     </div>
+                    <button onClick={() => addMovieToWatchList(movie)}>Add</button>
                   </div>
                 </div>
               );

@@ -13,9 +13,17 @@
     padding-bottom:10px;
     background-color: black;
     @media screen and (max-width:425px){
+        flex-direction: row;
+    }
+    @media screen and (max-width:320px){
+        flex-direction: column;
+    }
+     @media screen and (max-width:375px){
         flex-direction: column;
     }
     @media screen and (max-width:1024px) and (min-width:768px){
+        flex-direction: row;
+
     }
   
 }
@@ -34,6 +42,7 @@
     }
     position: absolute;
     
+    
 }
 .input_menu{
     display:flex;
@@ -51,8 +60,11 @@ display:none;
     @media screen and (max-width:767px) and (min-width:425px) {
 display:none;
     }
+     @media screen and (max-width:425px){
+display:none;    }
 }
 .input{
+    padding-left:30px;
     cursor: pointer;
     color:white;
     background-color: transparent;
@@ -64,10 +76,12 @@ display:none;
         border-radius: 8px;
         background-color: transparent;
         opacity: 1;
-        .icon{
-            display:none;
-        }
+        
     }
+    &:focus .icon{
+        padding:20px;
+    }
+ 
      @media screen and (min-width:768px) and (max-width:1024px) {
             width:500px;
         padding-left:0px;
@@ -80,10 +94,13 @@ display:none;
     opacity: 0;
     padding-top:5px;
     padding-bottom:5px;
-    padding-left:35px;
+    
     padding-right:0px;
 }
 .date{
+    @media screen and (max-width:425px){
+        display:none;
+    }
     outline: none;
     border: none;
     border-radius: 20px;
@@ -104,5 +121,10 @@ display:none;
     @media screen and (max-width:768px) and (min-width:425px) {
         display:block;
         
+    }
+}
+.tog{
+    @media screen and (max-width:1440px) {
+        display:none;
     }
 }

@@ -8,8 +8,6 @@ import { useState } from "react";
 import {useNavigate} from "react-router-dom"
 import Menu from "../Menu/Menu";
 import DarkModeToggle from "react-dark-mode-toggle";
-import Provider, { useDarkmodeContext } from 'react-use-dark-mode';
-import DarkMode from "../DarkMode/DarkMode";
 import moment from "moment";
 
 
@@ -18,10 +16,6 @@ const cx=classNames.bind(styles)
 
 
 function Navbar() {
-  
- 
- 
-
     const [isDarkMode, setIsDarkMode] = useState(() => false);
 
   // Khởi tạo Function hiển ẩn navbar khi scroll
@@ -84,14 +78,18 @@ function Navbar() {
                   value={keywords}
                 ></input>
               </div>
-              <div className={cx("menu")}>
-                <Menu></Menu>
               </div>
-            </div>
+              
+                <div className={cx("menu")}>
+                  <Menu></Menu>
+                </div>
+            
+            
             <div
               style={scrollY > 50 ? { display: "block" } : { display: "none" }}
             ></div>
             <DarkModeToggle
+              className={cx('tog')}
               onChange={setIsDarkMode}
               checked={isDarkMode}
               size={80}

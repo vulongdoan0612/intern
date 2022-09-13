@@ -1,5 +1,8 @@
 import React from "react";
 import "./DarkMode.css";
+import classNames from "classnames/bind";
+import styles from "./DarkMode.module.scss";
+const cx = classNames.bind(styles);
 
 const DarkMode = () => {
   let clickedClass = "clicked";
@@ -33,11 +36,13 @@ const DarkMode = () => {
   };
 
   return (
-    <button
-      className={theme === "dark" ? clickedClass : ""}
-      id="darkMode"
-      onClick={(e) => switchTheme(e)}
-    ></button>
+    <div className={cx('mode')}>
+      <button
+        className={theme === "dark" ? clickedClass : ""}
+        id="darkMode"
+        onClick={(e) => switchTheme(e)}
+      ></button>
+    </div>
   );
 };
 
